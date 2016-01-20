@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get 'home/index'
 
-  get 'home/about'
+  get '/about', to: 'home#about', as: 'about'
+  
+  root to: 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
