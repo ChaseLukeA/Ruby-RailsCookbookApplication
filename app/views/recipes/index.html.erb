@@ -1,31 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Recipes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Ingredients</th>
-      <th>Instructions</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @recipes.each do |recipe| %>
-      <tr>
-        <td><%= recipe.title %></td>
-        <td><%= recipe.ingredients %></td>
-        <td><%= recipe.instructions %></td>
-        <td><%= link_to 'Show', recipe %></td>
-        <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-        <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<h1>Listing recipes</h1>
+<table> <tr>
+    <th>Title</th>
+    <th>Last Updated</th>
+    <th colspan="2">&nbsp;</th>
+</tr>
+  <% @recipes.each do |recipe| %>
+  <tr>
+    <td><%= link_to recipe.title, recipe %></td>
+    <td><%= time_ago_in_words(recipe.updated_at) %> ago</td>
+    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
+    <td><%= button_to 'Destroy', recipe, confirm: 'Are you sure?', method: :delete
+ %></td>
+  </tr>
+  <% end %>
 </table>
-
-<br>
-
 <%= link_to 'New Recipe', new_recipe_path %>

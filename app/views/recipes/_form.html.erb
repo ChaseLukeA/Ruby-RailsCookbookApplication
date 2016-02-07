@@ -10,18 +10,19 @@
       </ul>
     </div>
   <% end %>
+  <h5><u>Note: fields with * are required.</u></h5>
 
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %> *
   </div>
   <div class="field">
     <%= f.label :ingredients %><br>
-    <%= f.text_area :ingredients %>
+    <%= f.text_area :ingredients %> *
   </div>
   <div class="field">
     <%= f.label :instructions %><br>
-    <%= f.text_area :instructions %>
+    <%= f.text_area :instructions %> *
   </div>
   <div class="actions">
     <%= f.submit %>

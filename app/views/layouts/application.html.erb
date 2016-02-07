@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Cookbook</title>
+    <title><%= @title %></title>
     <%= stylesheet_link_tag    'application',
       media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -13,10 +13,15 @@
         <h1>Our Cookbook</h1>
       </header>
       <nav>
-        <%=link_to 'Home', root_url %>
-        <%=link_to 'About', about_url %>
-        <%=link_to 'Recipes', recipes_url %>
+        <%=link_to_unless_current 'Home', root_url %>
+        <%=link_to_unless_current 'Recipes', recipes_url %>
+        <%=link_to_unless_current 'About', about_url %>
       </nav>
+      <% if notice %>
+      <div id="notice">
+        <%= notice %>
+      </div>
+      <% end %>
       <section class="content">
         <%= yield %>
       </section>

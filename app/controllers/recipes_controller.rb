@@ -5,20 +5,24 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
     @recipes = Recipe.all
+    @title = 'All Recipes'
   end
 
   # GET /recipes/1
   # GET /recipes/1.json
   def show
+    @title = 'Recipe Details'
   end
 
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @title = 'New Recipe'
   end
 
   # GET /recipes/1/edit
   def edit
+    @title = 'Edit Recipe'
   end
 
   # POST /recipes
