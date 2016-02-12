@@ -10,10 +10,16 @@
     <td><%= link_to recipe.title, recipe %></td>
     <td><%= recipe.category.name rescue "No category" %></td>
     <td><%= time_ago_in_words(recipe.updated_at) %> ago</td>
-    <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
-    <td><%= button_to 'Destroy', recipe, confirm: 'Are you sure?', method: :delete
- %></td>
+    <td><% if logged_in? %>
+      <%= link_to 'Edit', edit_recipe_path(recipe) %>
+    <% end %></td>
+    <td><% if logged_in? %>
+      <%= button_to 'Destroy', recipe, confirm: 'Are you sure?', method: :delete
+ %>
+    <% end %></td>
   </tr>
   <% end %>
 </table>
-<%= link_to 'New Recipe', new_recipe_path %>
+<% if logged_in? %>
+  <%= link_to 'New Recipe', new_recipe_path %>
+<% end %>

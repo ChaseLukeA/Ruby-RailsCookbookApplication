@@ -7,4 +7,8 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def login(user, password)
+    credentials = ActionController::HttpAuthentication::Basic.encode_credentials user, password
+    request.env['HTTP_AUTHORIZATION'] = credentials
+  end
 end

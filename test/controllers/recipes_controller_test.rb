@@ -2,6 +2,7 @@ require 'test_helper'
 
 class RecipesControllerTest < ActionController::TestCase
   setup do
+    login 'admin', 'password'
     @recipe = recipes(:one)
   end
 
@@ -46,4 +47,5 @@ class RecipesControllerTest < ActionController::TestCase
 
     assert_redirected_to recipes_path
   end
+
 end
