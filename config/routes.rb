@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   
   get '/about', to: 'home#about', as: 'about'
 
-  get '/categories', to: 'categories#index', as: 'categories'
-  
   root to: 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
