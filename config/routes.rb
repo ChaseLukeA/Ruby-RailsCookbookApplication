@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :recipes
   
   get '/about', to: 'home#about', as: 'about'
+
+  get '/categories', to: 'categories#index', as: 'categories'
   
   root to: 'home#index'
 

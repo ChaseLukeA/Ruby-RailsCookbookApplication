@@ -1,4 +1,5 @@
 class Recipe < ActiveRecord::Base
-  validates_presence_of :title, :ingredients, :instructions
+  belongs_to :category
   validates :title, uniqueness: true
+  validates_presence_of :title, :ingredients, :instructions, :calories
 end
