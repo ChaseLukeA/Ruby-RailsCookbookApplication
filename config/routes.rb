@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+  resources :users
   resources :recipes
   
   get '/about', to: 'home#about', as: 'about'
+ 
+  get 'admin/index'
 
+  get '/admin', to: 'admin#index', as: 'index'
+  
   root to: 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

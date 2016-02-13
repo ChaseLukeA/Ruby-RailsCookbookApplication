@@ -4,8 +4,19 @@ one:
   title: "Ice Cream"
   ingredients: "3 scoops vanilla ice cream, chocolate syrup"
   instructions: "Scoop ice cream into the bowl and pour chocolate syrup on top."
+  category_id: "1"
+  calories: "10"
   
 two:
   title: "Toast"
   ingredients: "bread, butter, jelly"
   instructions: "Place bread in the toaster for 1 minute. Remove from toaster and apply butter to each piece."
+  category_id: "1"
+  calories: "10"
+
+three:
+  title: "Eggs"
+  ingredients: "Egg whites"
+  instructions: "Put eggs into the pan, heat until solid, serve"
+  category_id: "1"
+  calories: "150"
