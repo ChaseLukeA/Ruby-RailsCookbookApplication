@@ -1,0 +1,15 @@
+$noticeColor: green;
+$width: 960px;
+
+#notice {
+  color: $noticeColor;
+  margin: 1em auto;
+  text-transform: uppercase;
+  font-family: Arial;
+  font-size: 4em;
+  
+  @media only screen and (min-width: $width){
+    font-size: 2em;
+  }
+  
+}
